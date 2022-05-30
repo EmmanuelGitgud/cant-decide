@@ -1,18 +1,19 @@
 import random
 
-def decide(i,b):
     a = bool(random.getrandbits(1))
-    if a == True:
-        a = i
-    else:
-        a = b
-    print(f"\n{i} or {b} = {a}")
+Choices = []
+
+def choose ():
+    x = random.choice(Choices)
+    print(x)
 
 def get_input():
-    global choice1, choice2
-    choice1 = input("enter first parameter: ")
-    choice2 = input("enter second parameter: ")
+    x = input('enter a choice(and click "q" to start): ')
+    
+    if x == "q":
+        choose()
+    else:
+        Choices.append(x)
+        get_input()
 
 get_input()
-decide(choice1, choice2)
-    
